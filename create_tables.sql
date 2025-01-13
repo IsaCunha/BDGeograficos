@@ -128,3 +128,32 @@ CREATE TABLE pib_municipios (
 	PRIMARY KEY (id)
 )
 
+CREATE TABLE transferencias_aggregadas_sc (
+    nmmunicipiocredor VARCHAR(100), 
+    nmfuncao VARCHAR(100),         
+    vlempenhado DECIMAL(15, 2),    
+    vlliquidado DECIMAL(15, 2),    
+    vlpagoorcamentario DECIMAL(15, 2), 
+    valor_total DECIMAL(15, 2)     
+);
+
+CREATE TABLE correlacao_votacao_transferencias (
+    id SERIAL PRIMARY KEY,                       
+    cd_mun VARCHAR(10),                         
+    nm_municipio VARCHAR(100),                  
+    qt_votos_nominais INT,                      
+    qt_votos_validos INT,                       
+    nmfuncao VARCHAR(100),                      
+    vlempenhado DECIMAL(15, 2),                 
+    vlliquidado DECIMAL(15, 2),                 
+    vlpagoorcamentario DECIMAL(15, 2),          
+    valor_total DECIMAL(15, 2),                 
+    geom GEOMETRY,                              
+    area_km2 DECIMAL(15, 2),                    
+    cd_rgi VARCHAR(10),                         
+    nm_rgi VARCHAR(100),                        
+    cd_rgint VARCHAR(10),                       
+    nm_rgint VARCHAR(100)                       
+);
+
+
